@@ -20,6 +20,6 @@ Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogi
 
 Route::group(['middleware' => ['auth']], function(){
 
-    Route::get('/Home', [HomeController::class, 'Home']);
+    Route::get('/Home', [HomeController::class, 'Home'])->name('home');
 
 });

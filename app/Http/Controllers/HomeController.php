@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Karyawan;
 
 class HomeController extends Controller
 {
     public function Home()
     {
-        return view('index');
+        $pegawai = Karyawan::all();
+        return view('index', ['pegawai' => $pegawai]);
     }
 }

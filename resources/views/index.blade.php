@@ -31,7 +31,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Berkas</span>
-                <span class="info-box-number">{{ $berkas->count() }}</span>
+                <span class="info-box-number">
+                  {{-- {{ $berkas->count() }} --}}
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -84,7 +86,7 @@
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach ($berkas_belum as $bb)
+                    {{-- @foreach ($berkas_belum as $bb)
                   <tr>
                     <td>{{ $bb->nm_berkas }}</td>
                     <td>{{ $bb->jns_berkas }}</td>
@@ -96,7 +98,7 @@
                       </a>
                     </td>
                   </tr>
-                    @endforeach
+                    @endforeach --}}
                   
                   </tbody>
                 </table>
