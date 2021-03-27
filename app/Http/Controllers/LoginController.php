@@ -18,6 +18,7 @@ class LoginController extends Controller
         {
             return redirect('/Home');
         }
+        return redirect('/');
     }
 
     public function Logout(){
