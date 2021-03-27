@@ -43,11 +43,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="inputNIP">NIP Pegawai<sup style="color: red">*</sup></label>
-                                <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $pegawai->nip }}">
+                                <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $user->nip }}">
                             </div>
                             <div class="col-6">
                                 <label for="inputNama">Nama Pegawai<sup style="color: red">*</sup></label>
-                                <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $pegawai->nm_pegawai }}">
+                                <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $user->nm_pegawai }}">
                             </div>
                         </div>
                     </div>

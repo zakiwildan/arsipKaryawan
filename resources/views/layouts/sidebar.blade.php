@@ -98,7 +98,7 @@
         @endif
 
         <li class="nav-item">
-          <a href="/DataUser/{{ auth()->user()->nip }}" class="nav-link">
+          <a href="/PersonalData/{{ auth()->user()->nip }}" class="nav-link">
             <i class="nav-icon fas fa-user-edit"></i>
             <p>
               Personal Data
