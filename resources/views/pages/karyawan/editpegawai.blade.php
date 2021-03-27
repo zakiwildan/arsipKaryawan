@@ -32,7 +32,6 @@
                                 <!-- Form -->
                         <form action="/InputDataPgw/Update/{{ $editPegawai->nip }}" method="post">
                             {{ csrf_field() }}
-                            {{ method_field('PUT') }}
                                 @if ($errors->any())
                                     <div class="form-group">
                                         <div class="alert alert-danger" role="alert">
@@ -48,7 +47,7 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-6">
-                                            <label for="inputNIP">NIP Pegawai</label>
+                                            <label for="inputNIP">NIP Pegawai <sup style="color:red">*</sup></label>
                                             <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $editPegawai->nip }}">
                                         </div>
                                         <div class="col-6">
@@ -128,8 +127,14 @@
                                     <label for="inputNoTelp">Nomor Telepon</label>
                                     <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $editPegawai->no_telp }}">
                                 </div>
-
-                                <input type="submit" class="btn btn-primary btn-block" value="Update Data">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <a href="/DataPegawai" class="btn btn-danger btn-block"><i class="fas fa-arrow-left"></i>&nbspKembali</a>
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="submit" class="btn btn-primary btn-block" value="Update Data">
+                                    </div>
+                                </div>
                         </form>
                         <!-- ./form -->
 
