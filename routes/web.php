@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::post('/postLogin', "LoginController@postLogin")->name('postLogin');
+Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
+Route::get('/Home', [LoginController::class, 'Home']);
