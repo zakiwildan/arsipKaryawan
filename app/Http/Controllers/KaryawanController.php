@@ -16,4 +16,10 @@ class KaryawanController extends Controller
                     ->get();
         return view('pages.karyawan.datapegawai', ['pegawai' => $pegawai]);
     }
+
+    public function EditPegawai($nip)
+    {
+        $editPegawai = Karyawan::find($nip);
+        return view('pages.karyawan.editpegawai', ['editPegawai' => $editPegawai]);
+    }
 }

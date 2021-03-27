@@ -30,7 +30,7 @@
                         {{-- Identity Edit --}}
 
                                 <!-- Form -->
-                        <form action="/InputDataPgw/Update/{{ $pegawai->nip }}" method="post">
+                        <form action="/InputDataPgw/Update/{{ $editPegawai->nip }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
                                 @if ($errors->any())
@@ -49,11 +49,11 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="inputNIP">NIP Pegawai</label>
-                                            <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $pegawai->nip }}">
+                                            <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $editPegawai->nip }}">
                                         </div>
                                         <div class="col-6">
                                             <label for="inputNama">Nama Pegawai</label>
-                                            <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $pegawai->nm_pegawai }}">
+                                            <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $editPegawai->nm_pegawai }}">
                                         </div>
                                     </div>
                                 </div>
@@ -61,13 +61,13 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="inputTempat">Tempat Lahir</label>
-                                            <input type="text" name="tmp_lahir" class="form-control" id="inputTempat" placeholder="Masukkan Tempat Lahir" value="{{ $pegawai->tmp_lahir }}">
+                                            <input type="text" name="tmp_lahir" class="form-control" id="inputTempat" placeholder="Masukkan Tempat Lahir" value="{{ $editPegawai->tmp_lahir }}">
                                         </div>
                                         <div class="col-6">
                                             <!-- Date -->
                                             <label>Tanggal Lahir</label>
                                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" class="form-control datetimepicker-input" value="{{ $pegawai->tgl_lahir }}" data-target="#reservationdate"/>
+                                                <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" class="form-control datetimepicker-input" value="{{ $editPegawai->tgl_lahir }}" data-target="#reservationdate"/>
                                                 <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                 </div>
@@ -81,7 +81,7 @@
                                         <div class="col-md-6">
                                             <label>Jenis Kelamin</label>
                                             <select class="form-control select2bs4" name="jk" style="width: 100%;">
-                                                <option value="{{ $pegawai->jk }}" selected="selected">{{ $pegawai->jk }}</option>
+                                                <option value="{{ $editPegawai->jk }}" selected="selected">{{ $editPegawai->jk }}</option>
                                                 <option value="Laki - Laki">Laki - Laki</option>
                                                 <option value="Perempuan">Perempuan</option>
                                             </select>
@@ -89,7 +89,7 @@
                                         <div class="col-md-6">
                                             <label>Agama</label>
                                             <select class="form-control select2bs4" name="agama" style="width: 100%;">
-                                                <option selected="selected" value="{{ $pegawai->agama }}">{{ $pegawai->agama }}</option>
+                                                <option selected="selected" value="{{ $editPegawai->agama }}">{{ $editPegawai->agama }}</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Hindu">Hindu</option>
                                                 <option value="Buhda">Budha</option>
@@ -100,14 +100,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAlamat">Alamat</label>
-                                    <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Masukkan Alamat Pegawai" value="{{ $pegawai->alamat }}">
+                                    <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Masukkan Alamat Pegawai" value="{{ $editPegawai->alamat }}">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>Divisi</label>
                                             <select class="form-control select2bs4" name="divisi" style="width: 100%;">
-                                                <option value="{{ $pegawai->divisi }}">{{ $pegawai->divisi }}</option>
+                                                <option value="{{ $editPegawai->divisi }}">{{ $editPegawai->divisi }}</option>
                                                 <option value="Rawat Jalan">Rawat Jalan</option>
                                                 <option value="IBS">IBS</option>
                                                 <option value="TPPRI/TPPRJ">TPPRI/TPPRJ</option>
@@ -117,7 +117,7 @@
                                         <div class="col-md-6">
                                             <label>Jabatan</label>
                                             <select class="form-control select2bs4" name="jabatan" style="width: 100%;">
-                                                <option value="{{ $pegawai->jabatan }}">{{ $pegawai->jabatan }}</option>
+                                                <option value="{{ $editPegawai->jabatan }}">{{ $editPegawai->jabatan }}</option>
                                                 <option value="Kepala Ruangan">Kepala Ruangan</option>
                                                 <option value="Pelaksana">Pelaksana</option>
                                             </select>
@@ -126,7 +126,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputNoTelp">Nomor Telepon</label>
-                                    <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $pegawai->no_telp }}">
+                                    <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $editPegawai->no_telp }}">
                                 </div>
 
                                 <input type="submit" class="btn btn-primary btn-block" value="Update Data">

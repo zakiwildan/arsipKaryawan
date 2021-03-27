@@ -25,4 +25,5 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Karyawan
         Route::get('/DataPegawai', [KaryawanController::class, 'DataPegawai'])->name('datapegawai');
+        Route::get('/InputDataPgw/Edit/{nip}', [KaryawanController::class, 'EditPegawai'])->name('editpegawai');
 });
