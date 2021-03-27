@@ -27,7 +27,7 @@
 
         <!-- Dropdown Menu -->
         <li class="nav-item">
-            <a href="/" class="nav-link">
+            <a href="/Home" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
