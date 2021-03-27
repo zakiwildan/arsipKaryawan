@@ -25,6 +25,9 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Karyawan
         Route::get('/DataPegawai', [KaryawanController::class, 'DataPegawai'])->name('datapegawai');
+        Route::get('/TambahData', [KaryawanController::class, 'TambahData'])->name('tambahdata');
+        Route::post('/InputDataPgw/Simpan', [KaryawanController::class, 'SimpanPegawai'])->name('simpanpegawai');
         Route::get('/InputDataPgw/Edit/{nip}', [KaryawanController::class, 'EditPegawai'])->name('editpegawai');
         Route::post('/InputDataPgw/Update/{nip}', [KaryawanController::class, 'UpdatePegawai'])->name('updatepegawai');
+        Route::get('/InputDataPgw/Delete/{nip}', [KaryawanController::class, 'DeletePegawai'])->name('deletepegawai');
 });

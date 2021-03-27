@@ -19,7 +19,7 @@
                           <h3></h3>
                       </div>
                       <div class="col-sm-2">
-                          <a href="/InputDataPgw" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Tambah Data</a>
+                          <a href="/TambahData" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Tambah Data</a>
                       </div>
                   </div>
                 </div>
