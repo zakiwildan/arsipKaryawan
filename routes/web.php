@@ -19,7 +19,6 @@ Route::get('/', [LoginController::class, 'Login'])->name('login');
 Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
 
 Route::group(['middleware' => ['auth']], function(){
-
-    Route::get('/Home', [HomeController::class, 'Home'])->name('home');
-
+        Route::get('/Home', [HomeController::class, 'Home'])->name('home');
+        Route::get('/Logout', [LoginController::class, 'Logout'])->name('logout');
 });
