@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'Login'])->name('login');
 Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'cekstatus']], function(){
         Route::get('/Home', [HomeController::class, 'Home'])->name('home');
         Route::get('/Logout', [LoginController::class, 'Logout'])->name('logout');
 });
