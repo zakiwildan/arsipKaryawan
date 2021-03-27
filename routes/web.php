@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,7 @@ Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogi
 Route::group(['middleware' => ['auth']], function(){
         Route::get('/Home', [HomeController::class, 'Home'])->name('home');
         Route::get('/Logout', [LoginController::class, 'Logout'])->name('logout');
+
+        //Karyawan
+        Route::get('/DataPegawai', [KaryawanController::class, 'DataPegawai'])->name('datapegawai');
 });
