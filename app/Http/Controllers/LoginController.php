@@ -6,10 +6,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function Home()
-    {
-        return view('index');
-    }
 
     public function Login()
     {
@@ -18,7 +14,7 @@ class LoginController extends Controller
 
     public function postLogin(Request $request)
     {
-        if(Auth::attempt($request->only('email', 'password')))
+        if(Auth::attempt($request->only('email','password')))
         {
             return redirect('/Home');
         }

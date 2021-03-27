@@ -16,6 +16,10 @@ class CekStatus
      */
     public function handle(Request $request, Closure $next)
     {
+        if($request->user()->level == 'Admin' || $request->user()->level == 'Karyawan')
+        {
+            return redirect('/Home');
+        }
         return $next($request);
     }
 }
