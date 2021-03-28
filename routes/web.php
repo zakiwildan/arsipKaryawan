@@ -34,4 +34,5 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Userman
         Route::get('/PersonalData/{nip}', [UserController::class, 'PersonalUser'])->name('personaluser');
+        Route::post('/EditUser/Update/{nip}', [UserController::class, 'EditUser'])->name('edituser');
 });

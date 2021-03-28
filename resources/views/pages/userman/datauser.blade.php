@@ -23,9 +23,8 @@
               
               <div class="card-body">
                 <!-- Form -->
-                <form action="/InputDataPgw/Update/{{ auth()->user()->nip }}" method="post">
+                <form action="/EditUser/Update/{{ auth()->user()->nip }}" method="post">
                 {{ csrf_field() }}
-                {{ method_field('PUT') }}
                     @if ($errors->any())
                         <div class="form-group">
                             <div class="alert alert-danger alert-block" role="alert">
@@ -131,24 +130,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="inputPassword">Password<sup style="color: red">*</sup></label>
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Masukkan Password">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputRetypePassword">Retype Password<sup style="color: red">*</sup></label>
-                                <input type="password" name="confirm_password" class="form-control" id="retypepassword" placeholder="Masukkan Ulang Password">
-                            </div>
-                        </div>
-                    </div>
+
                     @endforeach
+                    
                     <hr class="my-4">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-2">
-                                <input type="submit" class="btn btn-primary btn-block" value="Simpan Data">
+                                <input type="submit" class="btn btn-primary btn-block" value="Update Data">
                             </div>
                             <div class="col-2">
                                 <a href="/Home" class="btn btn-danger btn-block">Kembali</a>

@@ -7,6 +7,7 @@
 @section('sub-page', 'Home')
 @section('content')
 <div class="container-fluid">
+
         <!-- Info boxes -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
@@ -70,6 +71,9 @@
             <!-- /.info-box -->
           </div>
         </div>
+
+        <!-- Info Data Belum terverifikasi -->
+        @if(auth()->user()->level == "Admin")
         <div class="card">
               <div class="card-header border-0">
                 <h3 class="card-title">Berkas Belum Terverifikasi</h3>
@@ -86,7 +90,8 @@
                   </tr>
                   </thead>
                   <tbody>
-                    {{-- @foreach ($berkas_belum as $bb)
+
+                @foreach ($berkasbelum as $bb)
                   <tr>
                     <td>{{ $bb->nm_berkas }}</td>
                     <td>{{ $bb->jns_berkas }}</td>
@@ -98,12 +103,13 @@
                       </a>
                     </td>
                   </tr>
-                    @endforeach --}}
+                @endforeach
                   
                   </tbody>
                 </table>
-              </div>
             </div>
+        </div>
+        @endif
 
 </div><!-- /.container-fluid -->
 @endsection
