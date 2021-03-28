@@ -84,7 +84,7 @@
                   <tr>
                     <th>Nama Berkas</th>
                     <th>Jenis</th>
-                    <th>User Upload</th>
+                    <th>User</th>
                     <th>Tgl upload</th>
                     <th>Action</th>
                   </tr>
