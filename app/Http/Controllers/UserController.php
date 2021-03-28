@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Karyawan;
+use App\Models\User;
+// use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,9 @@ class UserController extends Controller
         
         // return view('pages.userman.datauser', ['user', $user]);
 
-        $user = Karyawan::find($nip);
+        $user = User::join('pegawai', 'pegawai.nip', '=', 'users.nip')
+                ->where('users.nip', '=', $nip)
+                ->get();
         return view('pages.userman.datauser', ['user' => $user]);
     }
 }

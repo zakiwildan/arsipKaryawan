@@ -39,15 +39,16 @@
                         </div>       
                     @endif
                     
+                    @foreach ($user as $u)
                     <div class="form-group">
                         <div class="row">
                             <div class="col-6">
                                 <label for="inputNIP">NIP Pegawai<sup style="color: red">*</sup></label>
-                                <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $user->nip }}">
+                                <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $u->nip }}">
                             </div>
                             <div class="col-6">
                                 <label for="inputNama">Nama Pegawai<sup style="color: red">*</sup></label>
-                                <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $user->nm_pegawai }}">
+                                <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $u->nm_pegawai }}">
                             </div>
                         </div>
                     </div>
@@ -55,13 +56,13 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="inputTempat">Tempat Lahir<sup style="color: red">*</sup></label>
-                                <input type="text" name="tmp_lahir" class="form-control" id="inputTempat" placeholder="Masukkan Tempat Lahir" value="{{ $user->tmp_lahir }}">
+                                <input type="text" name="tmp_lahir" class="form-control" id="inputTempat" placeholder="Masukkan Tempat Lahir" value="{{ $u->tmp_lahir }}">
                             </div>
                             <div class="col-6">
                                 <!-- Date -->
                                 <label>Tanggal Lahir<sup style="color: red">*</sup></label>
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" value="{{ $user->tgl_lahir }}" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                    <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" value="{{ $u->tgl_lahir }}" class="form-control datetimepicker-input" data-target="#reservationdate"/>
                                     <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                     </div>
@@ -75,7 +76,7 @@
                             <div class="col-md-6">
                                 <label>Jenis Kelamin<sup style="color: red">*</sup></label>
                                 <select class="form-control select2bs4" name="jk" style="width: 100%;">
-                                    <option value="{{ $user->jk }}">{{ $user->jk }}</option>
+                                    <option value="{{ $u->jk }}">{{ $u->jk }}</option>
                                     <option value="Laki - Laki">Laki - Laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
@@ -83,7 +84,7 @@
                             <div class="col-md-6">
                                 <label>Agama<sup style="color: red">*</sup></label>
                                 <select class="form-control select2bs4" name="agama" style="width: 100%;">
-                                    <option value="{{ $user->agama }}">{{ $user->agama }}</option>
+                                    <option value="{{ $u->agama }}">{{ $u->agama }}</option>
                                     <option value="Islam">Islam</option>
                                     <option value="Hindu">Hindu</option>
                                     <option value="Buhda">Budha</option>
@@ -94,14 +95,14 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAlamat">Alamat<sup style="color: red">*</sup></label>
-                        <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Masukkan Alamat Pegawai" value="{{ $user->alamat }}">
+                        <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Masukkan Alamat Pegawai" value="{{ $u->alamat }}">
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Divisi</label>
                                 <select class="form-control select2bs4" name="divisi" style="width: 100%;">
-                                    <option value="{{ $user->divisi }}">{{ $user->divisi }}</option>
+                                    <option value="{{ $u->divisi }}">{{ $u->divisi }}</option>
                                     <option value="Rawat Jalan">Rawat Jalan</option>
                                     <option value="IBS">IBS</option>
                                     <option value="TPPRI/TPPRJ">TPPRI/TPPRJ</option>
@@ -111,7 +112,7 @@
                             <div class="col-md-6">
                                 <label>Jabatan</label>
                                 <select class="form-control select2bs4" name="jabatan" style="width: 100%;">
-                                    <option value="{{ $user->jabatan }}">{{ $user->jabatan }}</option>
+                                    <option value="{{ $u->jabatan }}">{{ $u->jabatan }}</option>
                                     <option value="Kepala Ruangan">Kepala Ruangan</option>
                                     <option value="Pelaksana">Pelaksana</option>
                                 </select>
@@ -122,11 +123,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="inputNoTelp">Nomor Telepon</label>
-                                <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $user->no_telp }}">    
+                                <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $u->no_telp }}">    
                             </div>
                             <div class="col-md-6">
                                 <label for="inputEmail">Email<sup style="color: red">*</sup></label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan Email">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan Email" value="{{ $u->email }}">
                             </div>
                         </div>
                     </div>
@@ -142,6 +143,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <hr class="my-4">
                     <div class="form-group">
                         <div class="row">
