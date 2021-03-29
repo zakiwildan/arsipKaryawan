@@ -34,6 +34,6 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Userman
         Route::get('/PersonalData/{nip}', [UserController::class, 'PersonalUser'])->name('personaluser');
-        Route::post('/EditUser/Update/{nip}', [UserController::class, 'EditUser'])->name('edituser');
+        Route::post('/EditUser/Update', [UserController::class, 'UpdatePersonal'])->name('updatepersonal');
         Route::get('/DaftarUser', [UserController::class, 'DaftarUser'])->name('daftaruser');
 });

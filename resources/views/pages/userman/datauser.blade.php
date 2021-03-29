@@ -23,7 +23,7 @@
               
               <div class="card-body">
                 <!-- Form -->
-                <form action="/EditUser/Update/{{ auth()->user()->nip }}" method="post">
+                <form action="/EditUser/Update" method="post">
                 {{ csrf_field() }}
                     @if ($errors->any())
                         <div class="form-group">
@@ -123,10 +123,6 @@
                             <div class="col-md-6">
                                 <label for="inputNoTelp">Nomor Telepon</label>
                                 <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $u->no_telp }}">    
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputEmail">Email<sup style="color: red">*</sup></label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan Email" value="{{ $u->email }}">
                             </div>
                         </div>
                     </div>

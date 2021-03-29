@@ -11,19 +11,13 @@ class UserController extends Controller
 {
     public function PersonalUser($nip)
     {
-        // $user = DB::table('users')
-        //         ->where('nip', '=', $nip)
-        //         ->get();
-        
-        // return view('pages.userman.datauser', ['user', $user]);
-
-        $user = User::join('pegawai', 'pegawai.nip', '=', 'users.nip')
-                ->where('users.nip', '=', $nip)
+        $user = DB::table('pegawai')
+                ->where('nip', '=', $nip)
                 ->get();
         return view('pages.userman.datauser', ['user' => $user]);
     }
 
-    public function EditUser(Request $request)
+    public function UpdatePersonal(Request $request)
     {
         DB::table('pegawai')
                 ->where('pegawai.nip', '=', $request->nip)

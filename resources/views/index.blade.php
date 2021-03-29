@@ -18,7 +18,6 @@
                 <span class="info-box-text">Jumlah User</span>
                 <span class="info-box-number">
                   {{ $pegawai->count() }}
-                  <small>User</small>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -33,7 +32,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Berkas</span>
                 <span class="info-box-number">
-                  {{-- {{ $berkas->count() }} --}}
+                  {{ $berkas->count() }}
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -51,7 +50,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Berkas Pending</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">
+                  {{ $berkasbelum->count() }}
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -64,7 +65,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Berkas Verified</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-number">
+                  {{ $berkasverif->count() }}
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
