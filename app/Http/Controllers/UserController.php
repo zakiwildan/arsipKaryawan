@@ -47,4 +47,13 @@ class UserController extends Controller
 
         return redirect('/Home');
     }
+
+    public function DaftarUser()
+    {
+        $user = DB::table('users')
+                ->join('pegawai', 'pegawai.nip', '=', 'users.nip')
+                ->get();
+
+        return view('pages.userman.daftaruser', ['user' => $user]);
+    }
 }
