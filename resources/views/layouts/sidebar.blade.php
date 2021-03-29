@@ -77,12 +77,21 @@
         </li>
         @endif
 
+        <li class="nav-item">
+          <a href="/PersonalData/{{ auth()->user()->nip }}" class="nav-link">
+            <i class="nav-icon fas fa-user-edit"></i>
+            <p>
+              Personal Data
+            </p>
+          </a>
+        </li>
+
         @if (auth()->user()->level == "Admin")
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users-cog"></i>
               <p>
-                Manajemen Users
+                Manajemen User
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -97,14 +106,34 @@
         </li> 
         @endif
 
-        <li class="nav-item">
-          <a href="/PersonalData/{{ auth()->user()->nip }}" class="nav-link">
-            <i class="nav-icon fas fa-user-edit"></i>
-            <p>
-              Personal Data
-            </p>
-          </a>
-        </li>
+        @if (auth()->user()->level == "Admin")
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Settings
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daftar Divisi</p>
+                </a>
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daftar Jabatan</p>
+                </a>
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daftar Jenis Berkas</p>
+                </a>
+              </li>
+            </ul>
+        </li> 
+        @endif
+
           <li class="nav-item">
             <a href="/Logout" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
