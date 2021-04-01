@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-friends"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah User</span>
@@ -27,7 +27,7 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-copy"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Jumlah Berkas</span>
@@ -46,7 +46,7 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-file-medical-alt"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Berkas Pending</span>
@@ -59,9 +59,10 @@
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
+
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-file"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Berkas Verified</span>

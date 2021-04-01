@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class KaryawanController extends Controller
 {
@@ -35,6 +36,15 @@ class KaryawanController extends Controller
                 'divisi'        => $request->divisi,
                 'jabatan'       => $request->jabatan,
                 'no_telp'       => $request->no_telp
+        ]);
+
+        DB::table('users')
+        ->insert([
+                'nip'           =>  $request->nip,
+                'level'         =>  "Karyawan",
+                'email'         =>  $request->email,
+                'password'      =>  bcrypt($request->password),
+                'remember_token'=>  Str::random(32)
         ]);
 
         return redirect()->back();

@@ -22,4 +22,5 @@ class Karyawan extends Model
         'jabatan',
         'no_telp'
     ];
+
 }
