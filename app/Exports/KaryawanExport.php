@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Karyawan;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
@@ -15,13 +16,24 @@ class KaryawanExport implements FromCollection
     */
     public function collection()
     {
-        return Karyawan::all();
+        return DB::table('pegawai')
+        ->select('nip', 'nm_pegawai', 'tgl_lahir', 'divisi', 'jabatan')
+        ->get();
     }
 
     public function headings(): array
     {
         return [
-            
+            'NIP',
+            'Nama Pegawai',
+            'Tempat Lahir',
+            'Tanggal Lahir',
+            'Jenis Kelamin',
+            'Agama',
+            'Alamat',
+            'Divisi',
+            'Jabatan',
+            'No. Telp'
         ];
     }
 }
