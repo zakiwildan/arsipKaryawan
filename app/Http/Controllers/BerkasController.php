@@ -15,4 +15,12 @@ class BerkasController extends Controller
         
         return view('pages.karyawan.daftarberkas', ['berkas' => $berkas]);
     }
+
+    public function DeleteBerkas($id)
+    {
+        DB::table('berkas_pegawai')
+                ->where('id', $id)
+                ->delete();
+        return redirect()->back();
+    }
 }

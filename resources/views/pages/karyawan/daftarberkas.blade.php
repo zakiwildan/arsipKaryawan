@@ -105,8 +105,8 @@
                                     <td class="text-center">{{ $b->tgl_upload }}</td>
                                     <td class="text-center">{{ $b->keterangan }}</td>
                                     <td class="text-center">{{ $b->stts_berkas }}</td>
-                                    <td>
-                                      <a href="/InputDataPgw/Delete/{{ $b->nip }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                    <td class="text-center">
+                                      <a href="/DaftarBerkas/Delete/{{ $b->id }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>
                                   </tr>
                                 @endforeach
