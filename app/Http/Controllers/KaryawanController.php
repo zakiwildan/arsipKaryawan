@@ -12,14 +12,29 @@ class KaryawanController extends Controller
     public function DataPegawai()
     {
         $pegawai = DB::table('pegawai')
+                    ->select('pegawai.nip', 'pegawai.nm_pegawai', 'pegawai.tgl_lahir', 'd_divisi.nm_divisi', 'd_jabatan.nm_jabatan')
                     ->join('users', 'users.nip', '=', 'pegawai.nip')
+                    ->join('d_divisi', 'd_divisi.kd_divisi', '=', 'pegawai.divisi')
+                    ->join('d_jabatan', 'd_jabatan.kd_jabatan', '=', 'pegawai.jabatan')
                     ->where('users.level', '!=', 'Admin')
                     ->get();
         return view('pages.karyawan.datapegawai', ['pegawai' => $pegawai]);
     }
 
     public function TambahData(){
-        return view('pages.karyawan.tambahdata');
+        $divisi = DB::table('d_divisi')
+                    ->where('status', '1')
+                    ->get();
+
+        $jabatan = DB::table('d_jabatan')
+                    ->where('status', '1')
+                    ->get();
+
+        // $jenisberkas = DB::table('d_jenisberkas')
+        //             ->where('status', '1')
+        //             ->get();
+
+        return view('pages.karyawan.tambahdata', ['divisi' => $divisi, 'jabatan' => $jabatan, 'jenisberkas' => $jenisberkas]);
     }
 
     public function SimpanPegawai(Request $request)
@@ -52,8 +67,35 @@ class KaryawanController extends Controller
 
     public function EditPegawai($nip)
     {
-        $editPegawai = Karyawan::find($nip);
-        return view('pages.karyawan.editpegawai', ['editPegawai' => $editPegawai]);
+        $editPegawai = DB::table('pegawai')
+                    ->select(
+                        'pegawai.nip', 
+                        'pegawai.nm_pegawai',
+                        'pegawai.tmp_lahir', 
+                        'pegawai.tgl_lahir', 
+                        'pegawai.jk',
+                        'pegawai.agama',
+                        'pegawai.alamat',
+                        'd_divisi.kd_divisi',
+                        'd_divisi.nm_divisi',
+                        'd_jabatan.kd_jabatan', 
+                        'd_jabatan.nm_jabatan',
+                        'pegawai.no_telp'
+                    )
+                    ->join('d_divisi', 'd_divisi.kd_divisi', '=', 'pegawai.divisi')
+                    ->join('d_jabatan', 'd_jabatan.kd_jabatan', '=', 'pegawai.jabatan')
+                    ->where('pegawai.nip','=', $nip)
+                    ->get();
+        
+        $divisi = DB::table('d_divisi')
+                    ->where('status', '1')
+                    ->get();
+
+        $jabatan = DB::table('d_jabatan')
+                    ->where('status', '1')
+                    ->get();
+                    
+        return view('pages.karyawan.editpegawai', ['editPegawai' => $editPegawai, 'divisi' => $divisi, 'jabatan' => $jabatan]);
     }
 
     public function UpdatePegawai(Request $request)

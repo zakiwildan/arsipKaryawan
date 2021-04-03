@@ -101,19 +101,19 @@
                             <div class="col-md-6">
                                 <label>Divisi</label>
                                 <select class="form-control select2bs4" name="divisi" style="width: 100%;">
-                                    <option value="{{ $u->divisi }}">{{ $u->divisi }}</option>
-                                    <option value="Rawat Jalan">Rawat Jalan</option>
-                                    <option value="IBS">IBS</option>
-                                    <option value="TPPRI/TPPRJ">TPPRI/TPPRJ</option>
-                                    <option value="Laboratorium">Laboratorium</option>
+                                    <option value="{{ $u->kd_divisi }}">{{ $u->nm_divisi }}</option>
+                                    @foreach ($divisi as $d)
+                                        <option value="{{ $d->kd_divisi }}">{{ $d->nm_divisi }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label>Jabatan</label>
                                 <select class="form-control select2bs4" name="jabatan" style="width: 100%;">
-                                    <option value="{{ $u->jabatan }}">{{ $u->jabatan }}</option>
-                                    <option value="Kepala Ruangan">Kepala Ruangan</option>
-                                    <option value="Pelaksana">Pelaksana</option>
+                                    <option value="{{ $u->kd_jabatan }}">{{ $u->nm_jabatan }}</option>
+                                    @foreach ($jabatan as $j)
+                                        <option value="{{ $j->kd_jabatan }}">{{ $j->nm_jabatan }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

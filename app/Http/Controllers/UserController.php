@@ -12,9 +12,34 @@ class UserController extends Controller
     public function PersonalUser($nip)
     {
         $user = DB::table('pegawai')
-                ->where('nip', '=', $nip)
+                ->select(
+                    'pegawai.nip', 
+                    'pegawai.nm_pegawai',
+                    'pegawai.tmp_lahir', 
+                    'pegawai.tgl_lahir', 
+                    'pegawai.jk',
+                    'pegawai.agama',
+                    'pegawai.alamat',
+                    'd_divisi.kd_divisi',
+                    'd_divisi.nm_divisi',
+                    'd_jabatan.kd_jabatan', 
+                    'd_jabatan.nm_jabatan',
+                    'pegawai.no_telp'
+                )
+                ->join('d_divisi', 'd_divisi.kd_divisi', '=', 'pegawai.divisi')
+                ->join('d_jabatan', 'd_jabatan.kd_jabatan', '=', 'pegawai.jabatan')
+                ->where('pegawai.nip','=', $nip)
                 ->get();
-        return view('pages.userman.datauser', ['user' => $user]);
+        
+        $divisi = DB::table('d_divisi')
+                ->where('status', '1')
+                ->get();
+
+        $jabatan = DB::table('d_jabatan')
+                ->where('status', '1')
+                ->get();
+
+        return view('pages.userman.datauser', ['user' => $user, 'divisi' => $divisi, 'jabatan' => $jabatan]);
     }
 
     public function UpdatePersonal(Request $request)
@@ -33,13 +58,7 @@ class UserController extends Controller
                     'no_telp'       => $request->no_telp
                 ]);
 
-        DB::table('users')
-                ->where('users.nip', '=', $request->nip)
-                ->update([
-                    'email'         => $request->email
-                ]);
-
-        return redirect('/Home');
+        return redirect()->back();
     }
 
     public function DaftarUser()

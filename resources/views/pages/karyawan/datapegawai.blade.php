@@ -45,8 +45,8 @@
                     <td class="text-center">{{$p->nip}}</td>
                     <td>{{$p->nm_pegawai}}</td>
                     <td class="text-center">{{$p->tgl_lahir}}</td>
-                    <td class="text-center">{{$p->divisi}}</td>
-                    <td class="text-center">{{$p->jabatan}}</td>
+                    <td class="text-center">{{$p->nm_divisi}}</td>
+                    <td class="text-center">{{$p->nm_jabatan}}</td>
                     <td class="text-center">
                       <a href="/InputDataPgw/Edit/{{ $p->nip }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
                       <a href="/InputDataPgw/Delete/{{ $p->nip }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

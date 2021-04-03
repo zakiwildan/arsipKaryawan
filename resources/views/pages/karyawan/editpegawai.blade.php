@@ -29,8 +29,9 @@
 
                         {{-- Identity Edit --}}
 
+                        @foreach ($editPegawai as $eP)
                                 <!-- Form -->
-                        <form action="/InputDataPgw/Update/{{ $editPegawai->nip }}" method="post">
+                        <form action="/InputDataPgw/Update/{{ $eP->nip }}" method="post">
                             {{ csrf_field() }}
                                 @if ($errors->any())
                                     <div class="form-group">
@@ -43,16 +44,16 @@
                                         </div>
                                     </div>       
                                 @endif
-                                
+
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="inputNIP">NIP Pegawai <sup style="color:red">*</sup></label>
-                                            <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $editPegawai->nip }}">
+                                            <input type="text" name="nip" class="form-control" id="inputNIP" placeholder="Masukkan NIP Pegawai" value="{{ $eP->nip }}">
                                         </div>
                                         <div class="col-6">
                                             <label for="inputNama">Nama Pegawai</label>
-                                            <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $editPegawai->nm_pegawai }}">
+                                            <input type="text" name="nm_pegawai" class="form-control" id="inputNama" placeholder="Masukkan Nama Pegawai" value="{{ $eP->nm_pegawai }}">
                                         </div>
                                     </div>
                                 </div>
@@ -60,13 +61,13 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="inputTempat">Tempat Lahir</label>
-                                            <input type="text" name="tmp_lahir" class="form-control" id="inputTempat" placeholder="Masukkan Tempat Lahir" value="{{ $editPegawai->tmp_lahir }}">
+                                            <input type="text" name="tmp_lahir" class="form-control" id="inputTempat" placeholder="Masukkan Tempat Lahir" value="{{ $eP->tmp_lahir }}">
                                         </div>
                                         <div class="col-6">
                                             <!-- Date -->
                                             <label>Tanggal Lahir</label>
                                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" class="form-control datetimepicker-input" value="{{ $editPegawai->tgl_lahir }}" data-target="#reservationdate"/>
+                                                <input type="text" name="tgl_lahir" placeholder="Input Tanggal Lahir" class="form-control datetimepicker-input" value="{{ $eP->tgl_lahir }}" data-target="#reservationdate"/>
                                                 <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                 </div>
@@ -80,7 +81,7 @@
                                         <div class="col-md-6">
                                             <label>Jenis Kelamin</label>
                                             <select class="form-control select2bs4" name="jk" style="width: 100%;">
-                                                <option value="{{ $editPegawai->jk }}" selected="selected">{{ $editPegawai->jk }}</option>
+                                                <option value="{{ $eP->jk }}" selected="selected">{{ $eP->jk }}</option>
                                                 <option value="Laki - Laki">Laki - Laki</option>
                                                 <option value="Perempuan">Perempuan</option>
                                             </select>
@@ -88,7 +89,7 @@
                                         <div class="col-md-6">
                                             <label>Agama</label>
                                             <select class="form-control select2bs4" name="agama" style="width: 100%;">
-                                                <option selected="selected" value="{{ $editPegawai->agama }}">{{ $editPegawai->agama }}</option>
+                                                <option selected="selected" value="{{ $eP->agama }}">{{ $eP->agama }}</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Hindu">Hindu</option>
                                                 <option value="Buhda">Budha</option>
@@ -99,34 +100,35 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAlamat">Alamat</label>
-                                    <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Masukkan Alamat Pegawai" value="{{ $editPegawai->alamat }}">
+                                    <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Masukkan Alamat Pegawai" value="{{ $eP->alamat }}">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>Divisi</label>
                                             <select class="form-control select2bs4" name="divisi" style="width: 100%;">
-                                                <option value="{{ $editPegawai->divisi }}">{{ $editPegawai->divisi }}</option>
-                                                <option value="Rawat Jalan">Rawat Jalan</option>
-                                                <option value="IBS">IBS</option>
-                                                <option value="TPPRI/TPPRJ">TPPRI/TPPRJ</option>
-                                                <option value="Laboratorium">Laboratorium</option>
+                                                <option value="{{ $eP->kd_divisi }}">{{ $eP->nm_divisi }}</option>
+                                                @foreach ($divisi as $d)
+                                                    <option value="{{ $d->kd_divisi }}">{{ $d->nm_divisi }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-6">
                                             <label>Jabatan</label>
                                             <select class="form-control select2bs4" name="jabatan" style="width: 100%;">
-                                                <option value="{{ $editPegawai->jabatan }}">{{ $editPegawai->jabatan }}</option>
-                                                <option value="Kepala Ruangan">Kepala Ruangan</option>
-                                                <option value="Pelaksana">Pelaksana</option>
+                                                <option value="{{ $eP->kd_jabatan }}">{{ $eP->nm_jabatan }}</option>
+                                                @foreach ($jabatan as $j)
+                                                    <option value="{{ $j->kd_jabatan }}">{{ $j->nm_jabatan }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputNoTelp">Nomor Telepon</label>
-                                    <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $editPegawai->no_telp }}">
+                                    <input type="text" name="no_telp" class="form-control" id="inputNoTelp" placeholder="Masukkan Nomor Telepon Pegawai" value="{{ $eP->no_telp }}">
                                 </div>
+
                                 <div class="row">
                                     <div class="col-2">
                                         <a href="/DataPegawai" class="btn btn-danger btn-block"><i class="fas fa-arrow-left"></i>&nbspKembali</a>
@@ -137,6 +139,7 @@
                                 </div>
                         </form>
                         <!-- ./form -->
+                        @endforeach
 
                         {{-- /.identity edit --}}
 
