@@ -5,6 +5,7 @@ use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\ManageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,4 +42,11 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/PersonalData/{nip}', [UserController::class, 'PersonalUser'])->name('personaluser');
         Route::post('/EditUser/Update', [UserController::class, 'UpdatePersonal'])->name('updatepersonal');
         Route::get('/DaftarUser', [UserController::class, 'DaftarUser'])->name('daftaruser');
+
+        //manage list
+        Route::get('/DaftarJB', [ManageController::class, 'DaftarJB'])->name('daftarjb');
+        Route::get('/DaftarDivisi', [ManageController::class, 'DaftarDivisi'])->name('daftardivisi');
+        Route::post('DaftarDivisi/Upload', [ManageController::class, 'SimpanDivisi'])->name('simpandivisi');
+        Route::get('/DaftarDivisi/Delete/{kd_divisi}', [ManageController::class, 'DeleteDivisi'])->name('deletedivisi');
+        Route::get('/DaftarJabatan', [ManageController::class, 'DaftarJabatan'])->name('daftarjabatan');
 });

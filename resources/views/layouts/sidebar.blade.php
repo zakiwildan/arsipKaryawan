@@ -117,15 +117,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/DaftarDivisi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Divisi</p>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="/DaftarJabatan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Jabatan</p>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="/DaftarJB" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Jenis Berkas</p>
                 </a>
