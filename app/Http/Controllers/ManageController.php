@@ -84,4 +84,43 @@ class ManageController extends Controller
         
         return redirect()->back();
     }
+
+    public function DaftarJenisBerkas()
+    {
+        $jenis_berkas = DB::table('d_jenisberkas')
+                ->where('status', '1')
+                ->get();
+        return view('pages.manajemen-app.daftarjb', ['jenis_berkas' => $jenis_berkas]);
+    }
+
+    public function SimpanJenisBerkas(Request $request)
+    {
+        $ambil_no = DB::table('d_jenisberkas')
+                    ->max('kd_jns_berkas');
+
+        $no_awal = (int) substr($ambil_no, 3, 3);
+        $no_awal ++;
+        $kode_jb = "JB";
+        $no_jb = $kode_jb . sprintf("%03s", $no_awal);
+
+        DB::table('d_jenisberkas')
+        ->insert([
+            'kd_jns_berkas' => $no_jb,
+            'nm_jns_berkas' => $request->nm_jabatan,
+            'status'    => "1"
+        ]);
+        
+        return redirect()->back();
+    }
+
+    public function DeleteJenisBerkas($kd_jns_berkas)
+    {
+        DB::table('d_jenisberkas')
+            ->where('kd_jns_berkas', $kd_jns_berkas)
+            ->update([
+                'status' => "0"
+            ]);
+        
+        return redirect()->back();
+    }
 }

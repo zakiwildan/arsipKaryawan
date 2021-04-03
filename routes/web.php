@@ -52,4 +52,8 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/DaftarJabatan', [ManageController::class, 'DaftarJabatan'])->name('daftarjabatan');
         Route::post('/DaftarJabatan/Upload', [ManageController::class, 'SimpanJabatan'])->name('simpanjabatan');
         Route::post('/DaftarJabatan/Delete/{kd_jabatan}', [ManageController::class, 'DeleteJabatan'])->name('deletejabatan');
+
+        Route::get('/DaftarJB', [ManageController::class, 'DaftarJenisBerkas'])->name('daftarjenisberkas');
+        Route::post('/DaftarJB/Upload', [ManageController::class, 'SimpanJenisBerkas'])->name('simpanjenisberkas');
+        Route::post('/DaftarJB/Delete/{kd_jns_berkas}', [ManageController::class, 'DeleteJenisBerkas'])->name('deletejenisberkas');
 });
