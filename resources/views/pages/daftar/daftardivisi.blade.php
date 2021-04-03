@@ -78,7 +78,10 @@
                                     <td>{{ $d->kd_divisi }}</td>
                                     <td class="text-center">{{ $d->nm_divisi }}</td>
                                     <td class="text-center">
-                                      <a href="/DaftarDivisi/Delete/{{ $d->kd_divisi }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                      <form action="/DaftarDivisi/Delete/{{ $d->kd_divisi }}" method="post">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                      </form>
                                     </td>
                                   </tr>
                                 @endforeach

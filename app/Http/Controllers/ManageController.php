@@ -35,11 +35,13 @@ class ManageController extends Controller
         return redirect()->back();
     }
 
-    public function DeleteDivisi($kd_divisi)
+    public function DeleteDivisi(Request $request, $kd_divisi)
     {
         DB::table('d_divisi')
             ->where('kd_divisi', $kd_divisi)
-            ->delete();
+            ->update([
+                'status' => "0"
+            ]);
         
         return redirect()->back();
     }

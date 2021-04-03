@@ -47,6 +47,6 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/DaftarJB', [ManageController::class, 'DaftarJB'])->name('daftarjb');
         Route::get('/DaftarDivisi', [ManageController::class, 'DaftarDivisi'])->name('daftardivisi');
         Route::post('DaftarDivisi/Upload', [ManageController::class, 'SimpanDivisi'])->name('simpandivisi');
-        Route::get('/DaftarDivisi/Delete/{kd_divisi}', [ManageController::class, 'DeleteDivisi'])->name('deletedivisi');
+        Route::post('/DaftarDivisi/Delete/{kd_divisi}', [ManageController::class, 'DeleteDivisi'])->name('deletedivisi');
         Route::get('/DaftarJabatan', [ManageController::class, 'DaftarJabatan'])->name('daftarjabatan');
 });
