@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BerkasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\LoginController;
@@ -34,6 +35,9 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/InputDataPgw/Edit/{nip}', [KaryawanController::class, 'EditPegawai'])->name('editpegawai');
         Route::post('/InputDataPgw/Update/{nip}', [KaryawanController::class, 'UpdatePegawai'])->name('updatepegawai');
         Route::get('/InputDataPgw/Delete/{nip}', [KaryawanController::class, 'DeletePegawai'])->name('deletepegawai');
+
+        //Berkas Pegawai
+        Route::get('/DaftarBerkas/{nip}', [BerkasController::class, 'DaftarBerkas'])->name('daftarberkas');
 
         //Export Data
         Route::get('/ExportData', [ExportController::class, 'DaftarExport'])->name('daftarexport');
