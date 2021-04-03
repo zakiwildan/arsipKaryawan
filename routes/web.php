@@ -38,7 +38,8 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Berkas Pegawai
         Route::get('/DaftarBerkas/{nip}', [BerkasController::class, 'DaftarBerkas'])->name('daftarberkas');
-        Route::get('DaftarBerkas/Delete/{id}', [BerkasController::class, 'DeleteBerkas'])->name('deleteberkas');
+        Route::post('/DaftarBerkas/Simpan', [BerkasController::class, 'SimpanBerkas'])->name('simpanberkas');
+        Route::get('/DaftarBerkas/Delete/{id}', [BerkasController::class, 'DeleteBerkas'])->name('deleteberkas');
 
         //Export Data
         Route::get('/ExportData', [ExportController::class, 'DaftarExport'])->name('daftarexport');
