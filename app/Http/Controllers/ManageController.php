@@ -12,7 +12,7 @@ class ManageController extends Controller
         $divisi = DB::table('d_divisi')
                 ->where('status', '1')
                 ->get();
-        return view('pages.daftar.daftardivisi', ['divisi' => $divisi]);
+        return view('pages.manajemen-app.daftardivisi', ['divisi' => $divisi]);
     }
 
     public function SimpanDivisi(Request $request)
