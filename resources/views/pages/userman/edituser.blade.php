@@ -23,7 +23,8 @@
               
               <div class="card-body">
                 <!-- Form -->
-                <form action="/InputDataPgw/Simpan" method="post">
+                @foreach ($edit as $e)
+                <form action="/DaftarUser/Update/{{ $e->nip }}" method="post">
                 {{ csrf_field() }}
                     @if ($errors->any())
                         <div class="form-group">
@@ -38,7 +39,6 @@
                         </div>       
                     @endif
                     
-                    @foreach ($edit as $e)
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label>Level User</label>
-                                <select class="form-control select2bs4" name="jk" style="width: 100%;">
+                                <select class="form-control select2bs4" name="lvl_user" style="width: 100%;">
                                     <option value="{{ $e->level }}">{{ $e->level }}</option>
                                     <option value="admin">Admin Utama</option>
                                     <option value="karyawan">Karyawan</option>
@@ -67,19 +67,20 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+
                     <hr class="my-4">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-2">
-                                <input type="submit" class="btn btn-primary btn-block" value="Simpan Data">
+                                <input type="submit" class="btn btn-primary btn-block" value="Update Data">
                             </div>
                             <div class="col-2">
-                                <a href="/DataPegawai" class="btn btn-danger btn-block">Kembali</a>
+                                <a href="/DaftarUser" class="btn btn-danger btn-block">Kembali</a>
                             </div>
                         </div>
                     </div>
                 </form>
+                @endforeach
                 <!-- ./form -->
               </div>
               <!-- /.card-body -->

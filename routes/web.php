@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\ManageController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,8 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/PersonalData/{nip}', [UserController::class, 'PersonalUser'])->name('personaluser');
         Route::post('/EditUser/Update', [UserController::class, 'UpdatePersonal'])->name('updatepersonal');
         Route::get('/DaftarUser', [UserController::class, 'DaftarUser'])->name('daftaruser');
+        Route::get('/DaftarUser/Edit/{nip}', [UserController::class, 'EditUser'])->name('edituser');
+        Route::post('/DaftarUser/Update/{nip}', [UserController::class, 'UpdateUser'])->name('updateuser');
 
         //manage app
         Route::get('/DaftarJB', [ManageController::class, 'DaftarJB'])->name('daftarjb');

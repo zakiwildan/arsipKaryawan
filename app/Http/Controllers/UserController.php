@@ -69,4 +69,37 @@ class UserController extends Controller
 
         return view('pages.userman.daftaruser', ['user' => $user]);
     }
+
+    public function EditUser($nip)
+    {
+        $edit = DB::table('users')
+                ->where('nip', $nip)
+                ->get();
+        
+        return view('pages.userman.edituser', ['edit' => $edit]);
+    }
+
+    public function UpdateUser(Request $request, $nip)
+    {
+        if($request->password == "")
+        {
+            DB::table('users')
+                ->where('nip', $nip)
+                ->update([
+                    'email' => $request->email,
+                    'level' => $request->lvl_user
+                ]);
+        }else if($request->password != "")
+        {
+            DB::table('users')
+                ->where('nip', $nip)
+                ->update([
+                    'email' => $request->email,
+                    'level' => $request->lvl_user,
+                    'password' => bcrypt($request->password)
+                ]);
+        }
+
+        return redirect('/DaftarUser');
+    }
 }

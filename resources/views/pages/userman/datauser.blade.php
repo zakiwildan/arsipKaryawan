@@ -23,7 +23,7 @@
               
               <div class="card-body">
                 <!-- Form -->
-                <form action="/EditUser/Update" method="post">
+                <form action="/DaftarUser/Update" method="post">
                 {{ csrf_field() }}
                     @if ($errors->any())
                         <div class="form-group">

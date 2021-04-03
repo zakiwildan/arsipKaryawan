@@ -34,7 +34,7 @@ class KaryawanController extends Controller
         //             ->where('status', '1')
         //             ->get();
 
-        return view('pages.karyawan.tambahdata', ['divisi' => $divisi, 'jabatan' => $jabatan, 'jenisberkas' => $jenisberkas]);
+        return view('pages.karyawan.tambahdata', ['divisi' => $divisi, 'jabatan' => $jabatan]);
     }
 
     public function SimpanPegawai(Request $request)
