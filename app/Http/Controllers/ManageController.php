@@ -45,4 +45,43 @@ class ManageController extends Controller
         
         return redirect()->back();
     }
+
+    public function DaftarJabatan()
+    {
+        $jabatan = DB::table('d_jabatan')
+                ->where('status', '1')
+                ->get();
+        return view('pages.manajemen-app.daftarjabatan', ['jabatan' => $jabatan]);
+    }
+
+    public function SimpanJabatan(Request $request)
+    {
+        $ambil_no = DB::table('d_jabatan')
+                    ->max('kd_jabatan');
+
+        $no_awal = (int) substr($ambil_no, 3, 3);
+        $no_awal ++;
+        $kode_jabatan = "JBT";
+        $no_jabatan = $kode_jabatan . sprintf("%03s", $no_awal);
+
+        DB::table('d_jabatan')
+        ->insert([
+            'kd_jabatan' => $no_jabatan,
+            'nm_jabatan' => $request->nm_jabatan,
+            'status'    => "1"
+        ]);
+        
+        return redirect()->back();
+    }
+
+    public function DeleteJabatan($kd_jabatan)
+    {
+        DB::table('d_jabatan')
+            ->where('kd_jabatan', $kd_jabatan)
+            ->update([
+                'status' => "0"
+            ]);
+        
+        return redirect()->back();
+    }
 }

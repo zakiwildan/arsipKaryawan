@@ -4,7 +4,7 @@
 @section('current-user', 'Jack Anderson')
 @section('page', 'Arsip Pegawai')
 @section('main-page', 'Setting')
-@section('sub-page', 'Upload Berkas')
+@section('sub-page', 'Manajemen App')
 @section('content')
 <div class="container-fluid">
         <div class="row">
@@ -22,7 +22,7 @@
                                 @if (auth()->user()->level == 'Admin')
                                 <div class="col-sm-2">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
-                                        Tambah Divisi
+                                      <i class="fas fa fa-plus"></i>&nbsp&nbspTambah Divisi
                                     </button>
                                 </div>
                                 @endif
@@ -65,7 +65,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                   <thead>
                                   <tr>
-                                    <th class="text-center" style="width:20%">Kode Divisi</th>
+                                    <th class="text-center" style="width:10%">Kode Divisi</th>
                                     <th class="text-center" style="width:30%">Nama Divisi</th>
                                     <th class="text-center" style="width:5%">Action</th>
                                   </tr>
@@ -76,7 +76,7 @@
                                 @foreach($divisi as $d)
                                   <tr>
                                     <td>{{ $d->kd_divisi }}</td>
-                                    <td class="text-center">{{ $d->nm_divisi }}</td>
+                                    <td>{{ $d->nm_divisi }}</td>
                                     <td class="text-center">
                                       <form action="/DaftarDivisi/Delete/{{ $d->kd_divisi }}" method="post">
                                         {{ csrf_field() }}

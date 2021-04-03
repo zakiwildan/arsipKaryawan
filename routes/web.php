@@ -43,10 +43,13 @@ Route::group(['middleware' => ['auth']], function(){
         Route::post('/EditUser/Update', [UserController::class, 'UpdatePersonal'])->name('updatepersonal');
         Route::get('/DaftarUser', [UserController::class, 'DaftarUser'])->name('daftaruser');
 
-        //manage list
+        //manage app
         Route::get('/DaftarJB', [ManageController::class, 'DaftarJB'])->name('daftarjb');
         Route::get('/DaftarDivisi', [ManageController::class, 'DaftarDivisi'])->name('daftardivisi');
-        Route::post('DaftarDivisi/Upload', [ManageController::class, 'SimpanDivisi'])->name('simpandivisi');
+        Route::post('/DaftarDivisi/Upload', [ManageController::class, 'SimpanDivisi'])->name('simpandivisi');
         Route::post('/DaftarDivisi/Delete/{kd_divisi}', [ManageController::class, 'DeleteDivisi'])->name('deletedivisi');
+
         Route::get('/DaftarJabatan', [ManageController::class, 'DaftarJabatan'])->name('daftarjabatan');
+        Route::post('/DaftarJabatan/Upload', [ManageController::class, 'SimpanJabatan'])->name('simpanjabatan');
+        Route::post('/DaftarJabatan/Delete/{kd_jabatan}', [ManageController::class, 'DeleteJabatan'])->name('deletejabatan');
 });
