@@ -13,7 +13,10 @@ class BerkasController extends Controller
                     ->where('nip', $nip)
                     ->get();
         
-        return view('pages.karyawan.daftarberkas', ['berkas' => $berkas]);
+        $jenisberkas = DB::table('d_jenisberkas')
+                ->get();
+        
+        return view('pages.karyawan.daftarberkas', ['berkas' => $berkas, 'jenisberkas' => $jenisberkas]);
     }
 
     public function DeleteBerkas($id)

@@ -7,7 +7,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\ManageController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*

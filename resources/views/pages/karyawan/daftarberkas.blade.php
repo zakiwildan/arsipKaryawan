@@ -54,11 +54,10 @@
                                       <div class="form-group">
                                         <label>Jenis File <span><sup style="color: red">*</sup></span></label>
                                         <select name="jns_berkas" class="form-control">
-                                          <option>-- Pilih Jenis Berkas --</option>
-                                          <option value="ijazah">Ijazah</option>
-                                          <option value="akta">Akta Kelahiran</option>
-                                          <option value="kk">Kartu Keluarga</option>
-                                          <option value="ktp">KTP</option>
+                                          <option selected>-- Pilih Jenis Berkas --</option>
+                                          @foreach ($jenisberkas as $jb)
+                                              <option value="{{ $jb->kd_jns_berkas }}">{{ $jb->nm_jns_berkas }}</option>
+                                          @endforeach
                                         </select>
                                       </div>
                                       
