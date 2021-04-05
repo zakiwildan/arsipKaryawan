@@ -26,4 +26,9 @@ class BerkasController extends Controller
                 ->delete();
         return redirect()->back();
     }
+
+    public function UploadBerkas(Request $request)
+    {
+
+    }
 }
