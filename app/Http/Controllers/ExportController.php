@@ -20,6 +20,6 @@ class ExportController extends Controller
 
     public function ExportData()
     {
-        return Excel::download(new KaryawanExport, 'users.xlsx');
+        return Excel::download(new KaryawanExport, 'DATA PEGAWAI-'.time().'.xlsx');
     }
 }

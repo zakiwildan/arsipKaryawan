@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class KaryawanExport implements FromCollection
+class KaryawanExport implements FromCollection, WithHeadings, ShouldAutoSize
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -17,7 +17,7 @@ class KaryawanExport implements FromCollection
     public function collection()
     {
         return DB::table('pegawai')
-        ->select('nip', 'nm_pegawai', 'tgl_lahir', 'divisi', 'jabatan')
+        ->select('nip', 'nm_pegawai', 'tmp_lahir','tgl_lahir', 'jk', 'agama','divisi', 'jabatan', 'no_telp')
         ->get();
     }
 
