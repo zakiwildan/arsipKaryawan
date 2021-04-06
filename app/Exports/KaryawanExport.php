@@ -17,7 +17,9 @@ class KaryawanExport implements FromCollection, WithHeadings, ShouldAutoSize
     public function collection()
     {
         return DB::table('pegawai')
-        ->select('nip', 'nm_pegawai', 'tmp_lahir','tgl_lahir', 'jk', 'agama','divisi', 'jabatan', 'no_telp')
+        ->select('nip', 'nm_pegawai', 'tmp_lahir','tgl_lahir', 'jk', 'agama', 'alamat','nm_divisi', 'nm_jabatan', 'no_telp')
+        ->join('d_divisi', 'd_divisi.kd_divisi', 'pegawai.divisi')
+        ->join('d_jabatan', 'd_jabatan.kd_jabatan', 'pegawai.jabatan')
         ->get();
     }
 
