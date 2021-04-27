@@ -19,6 +19,7 @@ class HomeController extends Controller
                         ->get();
         $berkasbelum = DB::table('berkas_pegawai')
                         ->join('pegawai', 'pegawai.nip', '=', 'berkas_pegawai.nip')
+                        ->join('d_jenisberkas', 'd_jenisberkas.kd_jns_berkas', '=', 'berkas_pegawai.jns_berkas')
                         ->where('stts_berkas', '!=', 'Diterima')
                         ->get();
 

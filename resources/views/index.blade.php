@@ -76,6 +76,33 @@
           </div>
         </div>
 
+        <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Verifikasi Berkas</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- textarea -->
+                <div class="form-group">
+                  <label>Keterangan Penolakan</label>
+                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
         <!-- Info Data Belum terverifikasi -->
         @if(auth()->user()->level == "Admin")
         <div class="card">
@@ -97,14 +124,21 @@
 
                 @foreach ($berkasbelum as $bb)
                   <tr>
+                    <input type="hidden" name="id" value="{{ $bb->id_berkas }}">
                     <td>{{ $bb->nm_berkas }}</td>
-                    <td>{{ $bb->jns_berkas }}</td>
+                    <td>{{ $bb->nm_jns_berkas }}</td>
                     <td>{{ $bb->nm_pegawai }}</td>
                     <td>{{ $bb->tgl_upload }}</td>
                     <td>
                       <a target="_blank" href="{{ url('Uploads/Berkas/'.$bb->nm_berkas) }}" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
+                        <i style="color: blue" class="fas fa-search"></i>
+                      </a>&nbsp;
+                      <a href="" class="text-muted">
+                        <i style="color: green" class="fas fa-check-square"></i>
+                      </a>&nbsp;
+                      <button style="border:none; padding:0" class="text-muted" data-toggle="modal" data-target="#modal-default">
+                        <i style="color: red" class="fas fa-exclamation-triangle"></i>
+                      </button>
                     </td>
                   </tr>
                 @endforeach
