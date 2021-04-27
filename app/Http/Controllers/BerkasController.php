@@ -26,7 +26,7 @@ class BerkasController extends Controller
                 ->delete();
         return redirect()->back();
     }
-
+    
     public function SimpanBerkas(Request $request)
     {
         $file = $request->file('berkas');
