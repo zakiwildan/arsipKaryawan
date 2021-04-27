@@ -102,7 +102,7 @@
                     <td>{{ $bb->nm_pegawai }}</td>
                     <td>{{ $bb->tgl_upload }}</td>
                     <td>
-                      <a href="/DaftarBerkas/{{ $bb->nm_berkas }}" class="text-muted">
+                      <a href="/DaftarBerkas/Berkas/{{ $bb->nm_berkas }}" class="text-muted">
                         <i class="fas fa-search"></i>
                       </a>
                     </td>

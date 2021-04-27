@@ -31,7 +31,7 @@
                             <!-- Modal Upload Berkas -->
                             <div class="modal fade" id="modal-lg">
                                 <div class="modal-dialog modal-lg">
-                                  <form action="/BerkasUpload" method="post" enctype="multipart/form-data">
+                                  <form action="/DaftarBerkas/Simpan" method="post" enctype="multipart/form-data">
                                   {{ csrf_field() }}
                                   <div class="modal-content">
                                     <div class="modal-header">

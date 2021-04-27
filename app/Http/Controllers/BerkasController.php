@@ -27,8 +27,25 @@ class BerkasController extends Controller
         return redirect()->back();
     }
 
-    public function UploadBerkas(Request $request)
+    public function SimpanBerkas(Request $request)
     {
-
+        $file = $request->file('berkas');
+    
+        $nama_file = time()."_".$file->getClientOriginalName();
+    
+        $tujuan_upload = 'Uploads/Berkas';
+        $file->move($tujuan_upload,$nama_file);
+        
+        DB::table('berkas_pegawai')
+            ->insert([
+                'nip'          => auth()->user()->nip,
+                'nm_berkas'    => $nama_file,
+                'jns_berkas'   => $request->jns_berkas,
+                'tgl_upload'   => date('Y-m-d'),
+                'stts_berkas'  => "Dalam Verifikasi",
+                'keterangan'   => $request->keterangan,
+            ]);
+    
+        return redirect()->back();
     }
 }
