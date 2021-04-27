@@ -13,7 +13,9 @@ class ExportController extends Controller
     public function DaftarExport()
     {
         $pegawai = DB::table('pegawai')
-                    ->select('nip', 'nm_pegawai', 'tgl_lahir', 'divisi', 'jabatan')
+                    ->select('nip', 'nm_pegawai', 'tgl_lahir', 'nm_divisi', 'nm_jabatan')
+                    ->join('d_divisi', 'd_divisi.kd_divisi', 'pegawai.divisi')
+                    ->join('d_jabatan', 'd_jabatan.kd_jabatan', 'pegawai.jabatan')
                     ->get();
         return view('pages.karyawan.exportpegawai', ['pegawai' => $pegawai]);
     }

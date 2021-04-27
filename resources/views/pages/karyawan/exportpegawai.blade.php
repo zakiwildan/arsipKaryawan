@@ -29,10 +29,10 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th class="text-center" style="width:12%">NIP</th>
-                <th class="text-center" style="width:30%">Nama Pegawai</th>
+                <th class="text-center" style="width:10%">NIP</th>
+                <th class="text-center" style="width:28%">Nama Pegawai</th>
                 <th class="text-center" style="width:13%">Tgl Lahir</th>
-                <th class="text-center" style="width:15%">Divisi</th>
+                <th class="text-center" style="width:18%">Divisi</th>
                 <th class="text-center" style="width:15%">Jabatan</th>
               </tr>
               </thead>
@@ -44,8 +44,8 @@
                 <td class="text-center">{{$p->nip}}</td>
                 <td>{{$p->nm_pegawai}}</td>
                 <td class="text-center">{{$p->tgl_lahir}}</td>
-                <td class="text-center">{{$p->divisi}}</td>
-                <td class="text-center">{{$p->jabatan}}</td>
+                <td class="text-center">{{$p->nm_divisi}}</td>
+                <td class="text-center">{{$p->nm_jabatan}}</td>
               </tr>
               
               @endforeach
