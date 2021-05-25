@@ -100,7 +100,7 @@
                                 @foreach($berkas as $b)
                                   <tr>
                                     <td>{{ $b->nm_berkas }}</td>
-                                    <td class="text-center">{{ $b->jns_berkas }}</td>
+                                    <td class="text-center">{{ $b->nm_jns_berkas }}</td>
                                     <td class="text-center">{{ $b->tgl_upload }}</td>
                                     <td class="text-center">{{ $b->keterangan }}</td>
                                     <td class="text-center">{{ $b->stts_berkas }}</td>

@@ -10,6 +10,15 @@ class BerkasController extends Controller
     public function DaftarBerkas($nip)
     {
         $berkas = DB::table('berkas_pegawai')
+                    ->select(
+                        'berkas_pegawai.id_berkas',
+                        'berkas_pegawai.nm_berkas',
+                        'd_jenisberkas.nm_jns_berkas',
+                        'berkas_pegawai.tgl_upload',
+                        'berkas_pegawai.keterangan',
+                        'berkas_pegawai.stts_berkas'
+                    )
+                    ->join('d_jenisberkas', 'd_jenisberkas.kd_jns_berkas', 'berkas_pegawai.jns_berkas')
                     ->where('nip', $nip)
                     ->get();
         
