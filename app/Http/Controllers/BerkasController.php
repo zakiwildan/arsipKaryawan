@@ -57,4 +57,15 @@ class BerkasController extends Controller
     
         return redirect()->back();
     }
+
+    public function Verif($id_berkas)
+    {
+        DB::table('berkas_pegawai')
+            ->where('id_berkas', $id_berkas)
+            ->update([
+                'stts_berkas' => 'Terverifikasi'
+            ]);
+        
+        return redirect('/Home');
+    }
 }

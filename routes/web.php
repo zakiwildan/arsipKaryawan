@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/DaftarBerkas/{nip}', [BerkasController::class, 'DaftarBerkas'])->name('daftarberkas');
         Route::post('/DaftarBerkas/Simpan', [BerkasController::class, 'SimpanBerkas'])->name('simpanberkas');
         Route::get('/DaftarBerkas/Delete/{id}', [BerkasController::class, 'DeleteBerkas'])->name('deleteberkas');
+        Route::post('/DaftarBerkas/Verif/{id_berkas}', [BerkasController::class, 'Verif'])->name('verifikasiberkas');
 
         //Export Data
         Route::get('/ExportData', [ExportController::class, 'DaftarExport'])->name('daftarexport');
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['auth']], function(){
         //Userman
         Route::get('/PersonalData/{nip}', [UserController::class, 'PersonalUser'])->name('personaluser');
         Route::post('/PersonalData/Update/{nip}', [UserController::class, 'UpdatePersonal'])->name('updatepersonal');
+        
         Route::get('/DaftarUser', [UserController::class, 'DaftarUser'])->name('daftaruser');
         Route::get('/DaftarUser/Edit/{nip}', [UserController::class, 'EditUser'])->name('edituser');
         Route::post('/DaftarUser/Update/{nip}', [UserController::class, 'UpdateUser'])->name('updateuser');
