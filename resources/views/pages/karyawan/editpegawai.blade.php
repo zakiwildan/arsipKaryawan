@@ -153,8 +153,8 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                   <thead>
                                   <tr>
-                                    <th class="text-center" style="width:12%">Nama Berkas</th>
-                                    <th class="text-center" style="width:30%">Jenis Berkas</th>
+                                    <th class="text-center" style="width:25%">Nama Berkas</th>
+                                    <th class="text-center" style="width:12%">Jenis Berkas</th>
                                     <th class="text-center" style="width:13%">Tgl Upload</th>
                                     <th class="text-center" style="width:15%">Keterangan</th>
                                     <th class="text-center" style="width:10%">Status Verifikasi</th>
@@ -162,16 +162,18 @@
                                   </tr>
                                   </thead>
                                   <tbody>
-                
+                                
+                                @foreach ($berkasPegawai as $bG)
                             <!-- Get Data to Tables -->
                                   <tr>
-                                    <td class="text-center">-</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-center">-</td>
+                                    <td>{{ $bG->nm_berkas }}</td>
+                                    <td class="text-center">{{ $bG->nm_jns_berkas }}</td>
+                                    <td class="text-center">{{ $bG->tgl_upload }}</td>
+                                    <td class="text-center">{{ $bG->keterangan }}</td>
+                                    <td class="text-center">{{ $bG->stts_berkas }}</td>
                                     <td class="text-center">-</td>
                                   </tr>
+                                @endforeach
 
                             <!-- ./end get data to tables -->
                 

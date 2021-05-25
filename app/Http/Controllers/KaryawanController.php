@@ -94,8 +94,21 @@ class KaryawanController extends Controller
         $jabatan = DB::table('d_jabatan')
                     ->where('status', '1')
                     ->get();
+
+        $berkasPegawai = DB::table('berkas_pegawai')
+                    ->select(
+                        'berkas_pegawai.id_berkas',
+                        'berkas_pegawai.nm_berkas',
+                        'd_jenisberkas.nm_jns_berkas',
+                        'berkas_pegawai.tgl_upload',
+                        'berkas_pegawai.keterangan',
+                        'berkas_pegawai.stts_berkas'
+                    )
+                    ->join('d_jenisberkas','d_jenisberkas.kd_jns_berkas', 'berkas_pegawai.jns_berkas')
+                    ->where('berkas_pegawai.nip', $nip)
+                    ->get();
                     
-        return view('pages.karyawan.editpegawai', ['editPegawai' => $editPegawai, 'divisi' => $divisi, 'jabatan' => $jabatan]);
+        return view('pages.karyawan.editpegawai', ['editPegawai' => $editPegawai, 'divisi' => $divisi, 'jabatan' => $jabatan, 'berkasPegawai' => $berkasPegawai]);
     }
 
     public function UpdatePegawai(Request $request)
