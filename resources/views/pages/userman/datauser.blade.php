@@ -22,9 +22,6 @@
               <!-- /.card-header -->
               
               <div class="card-body">
-                <!-- Form -->
-                <form action="/DaftarUser/Update" method="post">
-                {{ csrf_field() }}
                     @if ($errors->any())
                         <div class="form-group">
                             <div class="alert alert-danger alert-block" role="alert">
@@ -39,6 +36,9 @@
                     @endif
                     
                     @foreach ($user as $u)
+                    <!-- Form -->
+                <form action="/PersonalData/Update/{{ $u->nip }}" method="post">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <div class="row">
                             <div class="col-6">
