@@ -15,12 +15,12 @@ class HomeController extends Controller
         $berkas = Berkas::all();
         $berkasverif = DB::table('berkas_pegawai')
                         ->join('pegawai', 'pegawai.nip', '=', 'berkas_pegawai.nip')
-                        ->where('stts_berkas', '!=', 'Dalam Verifikasi')
+                        ->where('stts_berkas', '=', 'Diterima')
                         ->get();
         $berkasbelum = DB::table('berkas_pegawai')
                         ->join('pegawai', 'pegawai.nip', '=', 'berkas_pegawai.nip')
                         ->join('d_jenisberkas', 'd_jenisberkas.kd_jns_berkas', '=', 'berkas_pegawai.jns_berkas')
-                        ->where('stts_berkas', '!=', 'Diterima')
+                        ->where('stts_berkas', '=', 'Dalam Verifikasi')
                         ->get();
 
         return view('index', ['pegawai' => $pegawai,'berkas' => $berkas, 'berkasverif' => $berkasverif, 'berkasbelum' => $berkasbelum]);

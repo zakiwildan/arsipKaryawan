@@ -127,6 +127,8 @@
                   <!-- Modal Penolakan -->
                   <div class="modal fade" id="modal-reject-{{ $bb->id_berkas }}">
                     <div class="modal-dialog">
+                      <form action="/DaftarBerkas/Reject/{{ $bb->id_berkas }}" method="post">
+                      {{ csrf_field() }}
                       <div class="modal-content">
                         <div class="modal-header">
                           <h4 class="modal-title">Verifikasi Berkas</h4>
@@ -146,6 +148,7 @@
                           <button type="submit" class="btn btn-primary">Simpan Penolakan</button>
                         </div>
                       </div>
+                      </form>
                       <!-- /.modal-content -->
                     </div>
                     <!-- /.modal-dialog -->
