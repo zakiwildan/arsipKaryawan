@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LoginController::class, 'Login'])->name('login');
+Route::get('/Login', [LoginController::class, 'Login'])->name('login');
 Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
 
 Route::group(['middleware' => ['auth']], function(){

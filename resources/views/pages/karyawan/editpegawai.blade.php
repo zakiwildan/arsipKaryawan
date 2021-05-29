@@ -186,7 +186,6 @@
                                                 <th class="text-center" style="width:13%">Tgl Upload</th>
                                                 <th class="text-center" style="width:15%">Keterangan</th>
                                                 <th class="text-center" style="width:10%">Status Verifikasi</th>
-                                                <th class="text-center" style="width:15%">Verifikasi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -199,7 +198,6 @@
                                                     <td class="text-center">{{ $bG->tgl_upload }}</td>
                                                     <td class="text-center">{{ $bG->keterangan }}</td>
                                                     <td class="text-center">{{ $bG->stts_berkas }}</td>
-                                                    <td class="text-center">-</td>
                                                 </tr>
                                             @endforeach
 

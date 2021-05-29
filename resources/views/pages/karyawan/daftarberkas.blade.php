@@ -66,12 +66,6 @@
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="inputKet">Keterangan</label>
-                                                <input type="text" name="keterangan" class="form-control" id="inputKet"
-                                                    placeholder="Isi keterangan jika ada...">
-                                            </div>
-
                                         </div>
                                         <div class="modal-footer justify-content-between">
                                             <button type="button" class="btn btn-default"

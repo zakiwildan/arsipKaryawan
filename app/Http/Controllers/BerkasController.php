@@ -52,7 +52,7 @@ class BerkasController extends Controller
                 'jns_berkas'   => $request->jns_berkas,
                 'tgl_upload'   => date('Y-m-d'),
                 'stts_berkas'  => "Dalam Verifikasi",
-                'keterangan'   => $request->keterangan,
+                'keterangan'   => "-",
             ]);
     
         return redirect()->back();
