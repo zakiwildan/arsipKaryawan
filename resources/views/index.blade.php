@@ -76,60 +76,6 @@
           </div>
         </div>
 
-        <!-- Modal Verifikasi -->
-        <div class="modal fade" id="modal-verif">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Verifikasi Berkas</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>Keterangan Diterima</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                </div>
-              </div>
-              <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-
-        <!-- Modal Penolakan -->
-        <div class="modal fade" id="modal-reject">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Verifikasi Berkas</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>Keterangan Penolakan</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                </div>
-              </div>
-              <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-
         <!-- Info Data Belum terverifikasi -->
         @if(auth()->user()->level == "Admin")
         <div class="card">
@@ -150,6 +96,62 @@
                   <tbody>
 
                 @foreach ($berkasbelum as $bb)
+                  
+                <!-- Modal Verifikasi -->
+                  <div class="modal fade" id="modal-verif-{{ $bb->id_berkas }}">
+                    <div class="modal-dialog">
+                      <form method="post" action="/DaftarBerkas/Verif/{{ $bb->id_berkas }}">
+                      {{ csrf_field() }}
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Verifikasi Berkas</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Apa anda sudah yakin??</p>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                          <button type="submit" class="btn btn-primary">Simpan Verifikasi</button>
+                        </div>
+                      </div>
+                      </form>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+
+                  <!-- Modal Penolakan -->
+                  <div class="modal fade" id="modal-reject-{{ $bb->id_berkas }}">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Verifikasi Berkas</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- textarea -->
+                          <div class="form-group">
+                            <label>Keterangan Penolakan</label>
+                            <textarea class="form-control" name="keterangan" rows="3" placeholder="Enter ..."></textarea>
+                          </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                          <button type="submit" class="btn btn-primary">Simpan Penolakan</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+
                   <tr>
                     <td>{{ $bb->nm_berkas }}</td>
                     <td>{{ $bb->nm_jns_berkas }}</td>
@@ -159,10 +161,10 @@
                       <a target="_blank" href="{{ url('Uploads/Berkas/'.$bb->nm_berkas) }}" class="text-muted">
                         <i style="color: blue" class="fas fa-search"></i>
                       </a>&nbsp;
-                      <button style="border:none; padding:0" class="text-muted" data-toggle="modal" data-target="#modal-verif">
+                      <button style="border:none; padding:0" class="text-muted" data-toggle="modal" data-target="#modal-verif-{{ $bb->id_berkas }}">
                         <i style="color: green" class="fas fa-check-square"></i>
                       </button>&nbsp;
-                      <button style="border:none; padding:0" class="text-muted" data-toggle="modal" data-target="#modal-reject">
+                      <button style="border:none; padding:0" class="text-muted" data-toggle="modal" data-target="#modal-reject-{{ $bb->id_berkas }}">
                         <i style="color: red" class="fas fa-exclamation-triangle"></i>
                       </button>
                     </td>

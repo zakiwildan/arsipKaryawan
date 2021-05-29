@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::post('/DaftarBerkas/Simpan', [BerkasController::class, 'SimpanBerkas'])->name('simpanberkas');
         Route::get('/DaftarBerkas/Delete/{id}', [BerkasController::class, 'DeleteBerkas'])->name('deleteberkas');
         Route::post('/DaftarBerkas/Verif/{id_berkas}', [BerkasController::class, 'Verif'])->name('verifikasiberkas');
+        Route::post('/DaftarBerkas/Reject/{id_berkas}', [BerkasController::class, 'Reject'])->name('rejectberkas');
 
         //Export Data
         Route::get('/ExportData', [ExportController::class, 'DaftarExport'])->name('daftarexport');

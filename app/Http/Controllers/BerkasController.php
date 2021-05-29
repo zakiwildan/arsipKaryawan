@@ -63,7 +63,19 @@ class BerkasController extends Controller
         DB::table('berkas_pegawai')
             ->where('id_berkas', $id_berkas)
             ->update([
-                'stts_berkas' => 'Terverifikasi'
+                'stts_berkas' => 'Diterima'
+            ]);
+        
+        return redirect('/Home');
+    }
+
+    public function Reject(Request $request, $id_berkas)
+    {
+        DB::table('berkas_pegawai')
+            ->where('id_berkas', $id_berkas)
+            ->update([
+                'stts_berkas' => 'Ditolak',
+                'keterangan' => $request->keterangan
             ]);
         
         return redirect('/Home');

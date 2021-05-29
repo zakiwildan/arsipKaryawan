@@ -12,7 +12,9 @@ class HomeController extends Controller
     public function Home()
     {
         $pegawai = Karyawan::all();
-        $berkas = Berkas::all();
+        $berkas = DB::table('berkas_pegawai')
+                  ->where('stts_berkas', '=', 'Diterima')
+                  ->get();
         $berkasverif = DB::table('berkas_pegawai')
                         ->join('pegawai', 'pegawai.nip', '=', 'berkas_pegawai.nip')
                         ->where('stts_berkas', '!=', 'Dalam Verifikasi')
