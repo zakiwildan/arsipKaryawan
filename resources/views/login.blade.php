@@ -27,7 +27,7 @@
   }
 
 </style>
-<body class="hold-transition login-page" id="login-page">
+<body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
     <a href="/Login"><b>SIAP</b> 2K20</a>
