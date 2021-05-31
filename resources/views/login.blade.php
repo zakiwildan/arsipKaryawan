@@ -14,12 +14,20 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{asset('AdminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('AdminLTE/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<style>
+  .position-relative {
+    position: relative;
+  }
+
+</style>
+<body class="hold-transition login-page" id="login-page">
 <div class="login-box">
   <div class="login-logo">
     <a href="/Login"><b>SIAP</b> 2K20</a>
@@ -29,7 +37,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Silahkan Login Terlebih Dahulu</p>
 
-      <form action="{{ route('postLogin') }}" method="post">
+      <form name="formPendaftaran" action="{{ route('postLogin') }}" method="post" onsubmit="return validateForm()">
         {{ csrf_field() }}
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email">
@@ -68,6 +76,39 @@
 <script src="{{asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('AdminLTE/dist/js/adminlte.min.js')}}"></script>
+<!-- SweetAlert2 -->
+<script src="{{asset('AdminLTE/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+
+<script>
+  function validateForm() {
+      if (document.forms["formPendaftaran"]["email"].value == "") {
+          document.forms["formPendaftaran"]["email"].focus();
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            text: 'Kolom Email Masih Kosong!!!',
+            icon: 'warning',
+            confirmButtonText: 'Cool',
+            showConfirmButton: false,
+            timer: 3000
+          })
+          return false;
+          }
+      if (document.forms["formPendaftaran"]["password"].value == "") {
+          document.forms["formPendaftaran"]["password"].focus();
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            text: 'Kolom Password Masih Kosong!!!',
+            icon: 'warning',
+            confirmButtonText: 'Cool',
+            showConfirmButton: false,
+            timer: 3000
+          })
+          return false;
+          }
+      }
+</script>
 
 </body>
 </html>

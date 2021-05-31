@@ -100,7 +100,11 @@
                                     <!-- Get Data to Tables -->
                                     @foreach ($berkas as $b)
                                         <tr>
-                                            <td>{{ $b->nm_berkas }}</td>
+                                            @if ( $b->stts_berkas == "Diterima" || $b->stts_berkas == "Dalam Verifikasi")
+                                                <td>{{ $b->nm_berkas }}</td>
+                                            @else
+                                                <td style="color: red;"><s>{{ $b->nm_berkas }}</s></td>
+                                            @endif
                                             <td class="text-center">{{ $b->nm_jns_berkas }}</td>
                                             <td class="text-center">{{ $b->tgl_upload }}</td>
                                             <td class="text-center">{{ $b->keterangan }}</td>
