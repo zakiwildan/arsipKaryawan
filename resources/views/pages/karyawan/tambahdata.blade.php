@@ -23,7 +23,7 @@
 
                     <div class="card-body">
                         <!-- Form -->
-                        <form action="/InputDataPgw/Simpan" method="post">
+                        <form action="/InputDataPgw/Simpan" method="post" onsubmit="return validateForm()" name="formTambahData">
                             {{ csrf_field() }}
                             @if ($errors->any())
                                 <div class="form-group">
@@ -156,7 +156,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-2">
-                                        <input type="submit" class="btn btn-primary btn-block" value="Simpan Data">
+                                        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                                     </div>
                                     <div class="col-2">
                                         <a href="/DataPegawai" class="btn btn-danger btn-block">Kembali</a>
@@ -174,5 +174,166 @@
             </div>
         </div>
     </div><!-- /.container-fluid -->
+
+    <script>
+        function validateForm() {
+            if (document.forms["formTambahData"]["nip"].value == "") {
+                document.forms["formTambahData"]["nip"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom NIP Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["nm_pegawai"].value == "") {
+                document.forms["formTambahData"]["nm_pegawai"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Nama Pegawai Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["tmp_lahir"].value == "") {
+                document.forms["formTambahData"]["tmp_lahir"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Tempat Lahir Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["tgl_lahir"].value == "") {
+                document.forms["formTambahData"]["tgl_lahir"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Tanggal Lahir Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["jk"].value == "") {
+                document.forms["formTambahData"]["jk"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Jenis Kelamin Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["agama"].value == "") {
+                document.forms["formTambahData"]["agama"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Agama Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["agama"].value == "") {
+                document.forms["formTambahData"]["agama"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Agama Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["alamat"].value == "") {
+                document.forms["formTambahData"]["alamt"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Alamat Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["divisi"].value == "") {
+                document.forms["formTambahData"]["divisi"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Divisi Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["jabatan"].value == "") {
+                document.forms["formTambahData"]["jabatan"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Jabatan Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["no_telp"].value == "") {
+                document.forms["formTambahData"]["no_telp"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Nomor Telepon Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["email"].value == "") {
+                document.forms["formTambahData"]["email"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Email Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+            else if (document.forms["formTambahData"]["password"].value == "") {
+                document.forms["formTambahData"]["password"].focus();
+                Swal.fire({
+                  toast: true,
+                  position: 'top-end',
+                  text: 'Kolom Password Masih Kosong!!!',
+                  icon: 'warning',
+                  showConfirmButton: false,
+                  timer: 3000
+                })
+                return false;
+            }
+        }
+      </script>
 
 @endsection
