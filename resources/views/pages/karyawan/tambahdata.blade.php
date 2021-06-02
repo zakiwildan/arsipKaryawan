@@ -180,11 +180,11 @@
             if (document.forms["formTambahData"]["nip"].value == "") {
                 document.forms["formTambahData"]["nip"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom NIP Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: "Kolom <b>NIP</b> Masih Kosong!!",
                   icon: 'warning',
-                  showConfirmButton: false,
+                  showConfirmButton: true,
                   timer: 3000
                 })
                 return false;
@@ -192,11 +192,10 @@
             else if (document.forms["formTambahData"]["nm_pegawai"].value == "") {
                 document.forms["formTambahData"]["nm_pegawai"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Nama Pegawai Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Nama Pegawai</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -204,11 +203,10 @@
             else if (document.forms["formTambahData"]["tmp_lahir"].value == "") {
                 document.forms["formTambahData"]["tmp_lahir"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Tempat Lahir Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Tempat Lahir</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -216,11 +214,10 @@
             else if (document.forms["formTambahData"]["tgl_lahir"].value == "") {
                 document.forms["formTambahData"]["tgl_lahir"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Tanggal Lahir Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Tanggal Lahir</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -228,11 +225,10 @@
             else if (document.forms["formTambahData"]["jk"].value == "") {
                 document.forms["formTambahData"]["jk"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Jenis Kelamin Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Jenis Kelamin</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -240,35 +236,21 @@
             else if (document.forms["formTambahData"]["agama"].value == "") {
                 document.forms["formTambahData"]["agama"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Agama Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Agama</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
-                  timer: 3000
-                })
-                return false;
-            }
-            else if (document.forms["formTambahData"]["agama"].value == "") {
-                document.forms["formTambahData"]["agama"].focus();
-                Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Agama Masih Kosong!!!',
-                  icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
             }
             else if (document.forms["formTambahData"]["alamat"].value == "") {
-                document.forms["formTambahData"]["alamt"].focus();
+                document.forms["formTambahData"]["alamat"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Alamat Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Alamat</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -276,11 +258,10 @@
             else if (document.forms["formTambahData"]["divisi"].value == "") {
                 document.forms["formTambahData"]["divisi"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Divisi Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Divisi</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -288,11 +269,10 @@
             else if (document.forms["formTambahData"]["jabatan"].value == "") {
                 document.forms["formTambahData"]["jabatan"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Jabatan Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Jabatan</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -300,11 +280,10 @@
             else if (document.forms["formTambahData"]["no_telp"].value == "") {
                 document.forms["formTambahData"]["no_telp"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Nomor Telepon Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Nomor Telepon</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -312,11 +291,10 @@
             else if (document.forms["formTambahData"]["email"].value == "") {
                 document.forms["formTambahData"]["email"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Email Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom </b>Email</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
@@ -324,11 +302,10 @@
             else if (document.forms["formTambahData"]["password"].value == "") {
                 document.forms["formTambahData"]["password"].focus();
                 Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  text: 'Kolom Password Masih Kosong!!!',
+                  title: "Error!",
+                  confirmButtonText: "Kembali",
+                  html: 'Kolom <b>Password</b> Masih Kosong!!!',
                   icon: 'warning',
-                  showConfirmButton: false,
                   timer: 3000
                 })
                 return false;
