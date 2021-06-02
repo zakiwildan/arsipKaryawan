@@ -88,7 +88,6 @@
             position: 'top-end',
             text: 'Kolom Email Masih Kosong!!!',
             icon: 'warning',
-            confirmButtonText: 'Cool',
             showConfirmButton: false,
             timer: 3000
           })
@@ -101,7 +100,6 @@
             position: 'top-end',
             text: 'Kolom Password Masih Kosong!!!',
             icon: 'warning',
-            confirmButtonText: 'Cool',
             showConfirmButton: false,
             timer: 3000
           })

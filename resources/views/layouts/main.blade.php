@@ -107,8 +107,10 @@
                 @yield('content')
             </section>
             <!-- /.content -->
+
         </div>
         <!-- /.content-wrapper -->
+
         <footer class="main-footer">
             <strong>Copyright &copy; 2020 <a href="http://mas-zaki.com">Jack Anderson</a>.</strong>
             All rights reserved.
@@ -129,5 +131,4 @@
     @extends('layouts.footer')
     <!-- ./script js -->
 </body>
-
 </html>

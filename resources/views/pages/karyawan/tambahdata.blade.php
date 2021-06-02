@@ -160,7 +160,7 @@
                                     </div>
                                     <div class="col-2">
                                         <a href="/DataPegawai" class="btn btn-danger btn-block">Kembali</a>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </form>

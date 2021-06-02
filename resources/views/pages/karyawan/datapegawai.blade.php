@@ -49,9 +49,9 @@
                                         <td class="text-center">{{ $p->nm_divisi }}</td>
                                         <td class="text-center">{{ $p->nm_jabatan }}</td>
                                         <td class="text-center">
-                                            <a href="/InputDataPgw/Edit/{{ $p->nip }}" class="btn btn-primary"><i
+                                            <a href="/InputDataPgw/Edit/{{ $p->nip }}" title="Edit Data" class="btn btn-primary"><i
                                                     class="fas fa-pencil-alt"></i></a>
-                                            <a href="/InputDataPgw/Delete/{{ $p->nip }}" class="btn btn-danger"><i
+                                            <a href="/InputDataPgw/Delete/{{ $p->nip }}" id="rmv" title="Hapus Data" class="btn btn-danger"><i
                                                     class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
@@ -70,4 +70,8 @@
             </div>
         </div>
     </div><!-- /.container-fluid -->
+
+<script>
+    
+</script>
 @endsection

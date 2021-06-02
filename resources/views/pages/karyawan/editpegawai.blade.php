@@ -193,7 +193,11 @@
                                             @foreach ($berkasPegawai as $bG)
                                                 <!-- Get Data to Tables -->
                                                 <tr>
-                                                    <td>{{ $bG->nm_berkas }}</td>
+                                                    @if ( $bG->stts_berkas == "Diterima" || $bG->stts_berkas == "Dalam Verifikasi")
+                                                        <td>{{ $bG->nm_berkas }}</td>
+                                                    @else
+                                                        <td style="color: red;"><s>{{ $bG->nm_berkas }}</s></td>
+                                                    @endif
                                                     <td class="text-center">{{ $bG->nm_jns_berkas }}</td>
                                                     <td class="text-center">{{ $bG->tgl_upload }}</td>
                                                     <td class="text-center">{{ $bG->keterangan }}</td>
